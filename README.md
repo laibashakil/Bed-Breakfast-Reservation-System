@@ -13,28 +13,26 @@ A user-friendly reservation system designed for bed and breakfast owners to mana
 - The details of each guest are saved in guests.txt
 
 # Classes
-## - `guest`: 
-This class stores the guest details such as name, CNIC, room number, email, and contact number.
-## - `Room`
-This class has two functions:
-- `allocate():` This function takes input from the user, validates it, and stores the guest's details in a linked list.
-- `cancel()`: This function cancels the reservation by taking input from the user, searching for the corresponding guest, and removing them from the linked list.
+1.	`guest`: This is a class representing the guests who will be allocated rooms. It has properties such as name, CNIC, roomNum, guestEmail, and contactNo representing the guest's name, identification number, room number, email, and contact number, respectively. The guest class also has a pointer to the next guest in the linked list.
+2.	`Room`: This class represents the hotel rooms and their allocation to guests. It has a private member head, which is a pointer to the first guest object in a linked list. The Room class has functions such as `checknameinput()`, `checkroomNuminput()`, `checkCNIC()`, `checkcontactNo()`, `validateEmail()`, `checkguestEmail()`, `allocate()`, and `cancel()`.
 
 # Functions
-- `checknameinput()`: This function validates the guest's name by checking if it contains only alphabets.
-- `checkroomNuminput()`: This function validates the room number by checking if it contains only digits and if the room number is already in use.
-- `checkCNIC()`: This function validates the guest's CNIC by checking if it is 13 digits long.
-- `checkcontactNo()`: This function validates the guest's contact number by checking if it is 11 digits long.
-- `validateEmail()`: This function validates the guest's email address by checking if it contains '@' and '.' and has a valid domain.
-- `checkguestEmail()`: This function validates the guest's email address by calling validateEmail() and repeatedly asking the user to enter a valid email address if it is not valid.
+1.	`checknameinput()`: This function is responsible for taking input of the guest's name, removing any spaces in the input, and validating that the input only contains alphabetic characters.
+2.	`checkroomNuminput()`: This function is responsible for taking input of the guest's room number, validating that the input only contains digits, and checking if the entered room number is already in use by another guest.
+3.	`checkCNIC()`: This function is responsible for taking input of the guest's 13-digit CNIC number and validating that the input is exactly 13 digits long.
+4.	`checkcontactNo()`: This function is responsible for taking input of the guest's contact number, validating that the input is exactly 11 digits long, and ensuring that the input only contains digits.
+5.	`validateEmail()`: This function takes an email address as input and returns a boolean value indicating whether the input is a valid email address or not.
+6.	`checkguestEmail()`: This function is responsible for taking input of the guest's email address, validating that the input is a valid email address using the `validateEmail()` function, and prompting the user to enter a valid email address if the input is not valid.
+7.	`allocate()`: This function is responsible for allocating a room to a guest. It takes input of the guest's name, room number, CNIC number, contact number, and email address using the above-mentioned functions. It then appends this information to a text file and creates a new guest object with the input information and adds it to the linked list of guests.
+8.	`cancel()`: This function is responsible for canceling the allocation of a room to a guest. It takes input of the guest's name and room number using the `checknameinput()` and `checkroomNuminput()` functions, respectively. It then searches the linked list of guests for a matching guest object and deletes it.
 
 # File Handling
 - The program uses file handling to store the guest details in a file named guests.txt.
 - When a guest room is allocated, their details are appended to the end of the file.
 - The file is opened in append mode to prevent overwriting the existing contents.
 
-# Author
-This program was written by Laiba Shakil as a personal project. Feel free to use, modify, or distribute the code.
+# Contributing
+If you would like to contribute to the program, please fork the repository and submit a pull request. Contributions are welcome and appreciated.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
