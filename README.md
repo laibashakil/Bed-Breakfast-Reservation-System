@@ -12,13 +12,13 @@ A user-friendly reservation system designed for bed and breakfast owners to mana
 - Follow the instructions on the screen to allocate or cancel a room, check the room number of a guest or display all guests' information
 - The details of each guest are saved in guests.txt
 
-#Classes
-- `guest`: 
+# Classes
+## - `guest`: 
 This class stores the guest details such as name, CNIC, room number, email, and contact number.
-- `Room`
+## - `Room`
 This class has two functions:
--- `allocate():` This function takes input from the user, validates it, and stores the guest's details in a linked list.
--- `cancel()`: This function cancels the reservation by taking input from the user, searching for the corresponding guest, and removing them from the linked list.
+- `allocate():` This function takes input from the user, validates it, and stores the guest's details in a linked list.
+- `cancel()`: This function cancels the reservation by taking input from the user, searching for the corresponding guest, and removing them from the linked list.
 
 # Functions
 - `checknameinput()`: This function validates the guest's name by checking if it contains only alphabets.
